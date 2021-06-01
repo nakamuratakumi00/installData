@@ -1,0 +1,46 @@
+■Visual Code / XAMPPのインストール
+https://qiita.com/tfukumori/items/97a8f1ac6532612b004f
+上記、4.2まで行う。
+
+
+・setting.json
+    "php.validate.executablePath": "C:\\xampp\\php\\php.exe",
+    "php.validate.run": "onType",
+    
+    
+・launch.json
+"version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for Xdebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9003
+        },
+        {
+            "name": "Launch currently open script",
+            "type": "php",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${fileDirname}",
+            "port": 9003
+        }
+    ]
+・php.ini
+[XDebug]
+xdebug.mode=debug
+xdebug.start_with_request=yes
+xdebug.client_port=9003
+zend_extension = C:\xampp\php\ext\php_xdebug-3.0.4-8.0-vs16-x86_64.dll
+xdebug.log=/tmp/xdebug.log
+
+
+■mysql
+http://web.sevendays-study.com/mysql/index.html
+https://qiita.com/Marny/items/eea9667066dbbaa900aa
+■PHP入門
+https://www.javadrive.jp/php/
+PHPプログラムの基本事項～セッション管理、PHPサンプルプログラム
+■PHP mysql
+https://blog.codecamp.jp/php-mysql
+
